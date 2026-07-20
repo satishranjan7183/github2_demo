@@ -8,12 +8,7 @@ permissions:
   contents: read
   
 jobs:
-  terraform-security-scan:
-    name: Terraform Security & Lint Scan
-    runs-on: ubuntu-latest
-    
   terraform-init-plan:
-    needs: terraform-security-scan
     runs-on: ubuntu-latest
 
     steps:
