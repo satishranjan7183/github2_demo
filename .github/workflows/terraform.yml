@@ -26,4 +26,16 @@ jobs:
           client-id: 002b7833-7473-4b31-bd2f-550f1fef68c0
           tenant-id: 8839fa1a-72d2-4f19-8736-4c73cf13d7a6
           subscription-id: 38d52de4-2fb6-4a85-96fb-5ba22d363e4e
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan -out=tfplan
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve tfplan          
           
