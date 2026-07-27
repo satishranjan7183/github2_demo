@@ -7,9 +7,6 @@ permissions:
   id-token: write
   contents: read
 
-env:
-  TERRAFORM_VERSION: ${{ vars.TERRAFORM_VERSION }}
-
 jobs:
   terraform-install-init:
     runs-on: ubuntu-latest
@@ -21,7 +18,7 @@ jobs:
       - name: Install Terraform
         uses: autero1/action-terraform@v3.0.1
         with:
-          terraform-version: ${{ env.TERRAFORM_VERSION }}
+          terraform-version: ${{ vars.TERRAFORM_VERSION }}
 
       - name: Azure Login
         uses: Azure/login@v2.3.0
@@ -44,7 +41,7 @@ jobs:
       - name: Install Terraform
         uses: autero1/action-terraform@v3.0.1
         with:
-          terraform-version: ${{ env.TERRAFORM_VERSION }}
+          terraform-version: ${{ vars.TERRAFORM_VERSION }}
 
       - name: Azure Login
         uses: Azure/login@v2.3.0
@@ -73,7 +70,7 @@ jobs:
       - name: Install Terraform
         uses: autero1/action-terraform@v3.0.1
         with:
-          terraform-version: ${{ env.TERRAFORM_VERSION }}
+          terraform-version: ${{ vars.TERRAFORM_VERSION }}
 
       - name: Azure Login
         uses: Azure/login@v2.3.0
